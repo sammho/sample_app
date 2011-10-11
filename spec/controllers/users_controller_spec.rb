@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe UsersController do
 
+	def show
+		@user = User.find(params[:id])
+	end
+
   describe "GET 'new'" do
     render_views
 
@@ -12,7 +16,7 @@ describe UsersController do
         end
     end
 
-    it "should be successful" do
+    it "should have the right title" do
       get 'new'
       response.should have_selector("title", :content => "Sign up")
     end
