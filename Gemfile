@@ -8,10 +8,12 @@ gem 'rails', '3.1.1'
 gem "pg", :group => :production
 gem 'sqlite3', '1.3.4', :group => :development
 gem 'gravatar_image_tag', '1.0.0.pre2'
+gem 'will_paginate', '3.0.pre2'
 
 group :development do
     gem 'rspec-rails', '2.6.1'
 		gem 'annotate', '2.4.1.beta1'
+		gem 'faker', '0.3.1'
 end
 
 group :test do
