@@ -68,6 +68,38 @@ describe "LayoutLinks" do
       response.should have_selector("a", :href => user_path(@user),
                                           :content => "Profile")
     end
+
+    it "should include the number of microposts" do
+      visit root_path
+      response.should have_selector("a", :content => "0 micropost")
+    end
+
+    it "should say 1 micropost" do
+      mp1 = Factory(:micropost, :user => @user, :content => "Foo bar")
+      visit root_path
+      response.should have_selector("a", :content => "1 micropost")
+    end
+
+    it "should say 2 microposts" do
+      mp1 = Factory(:micropost, :user => @user, :content => "Foo bar")
+      mp2 = Factory(:micropost, :user => @user, :content => "Foo bar")
+      visit root_path
+      response.should have_selector("a", :content => "2 microposts")
+    end
+
+    it "should paginate microposts" do
+      50.times do |n|
+        Factory(:micropost, :user => @user, :content => "Foo bar#{n}")
+      end
+      visit root_path
+      response.should have_selector("div.pagination")
+      response.should have_selector("span.disabled", :content => "Previous")
+# Escape issue with users?page=2 ??~
+#      response.should have_selector("a", :href => "page=2",
+#                                            :content => "2")
+#      response.should have_selector("a", :href => /page=2/,
+#                                          :content => "Next")
+    end
   end
 end
 

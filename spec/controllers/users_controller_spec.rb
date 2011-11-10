@@ -94,6 +94,15 @@ describe UsersController do
       response.should have_selector("span.content", :content => mp1.content)
       response.should have_selector("span.content", :content => mp2.content)
     end
+
+    it "should not show a delete button for a different user" do 
+      wrong_user = Factory(:user, :email => "user@example.net")
+      mp1 = Factory(:micropost, :user => wrong_user, :content => "Foo bar")
+      mp2 = Factory(:micropost, :user => wrong_user, :content => "Baz quux")
+      test_sign_in(@user)
+      get :show, :id => wrong_user
+      response.should_not have_selector("a", :content => "delete")
+    end
 	end
 
   describe "GET 'edit'" do
