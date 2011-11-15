@@ -1,0 +1,100 @@
+Binary data inserted for `string` type on column `encrypted_password`
+Binary data inserted for `string` type on column `salt`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "name", "salt", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["admin", false], ["created_at", Mon, 14 Nov 2011 21:37:18 UTC +00:00], ["email", "mhartl@example.com"], ["encrypted_password", "64155289b3531fe5e21dac061d882bb208599faa4758592a18805e8068c6c954"], ["name", "Michael Hartl"], ["salt", "c4e6b697f0c2792d7651a919cf13284cc76b67c691f9b4e4eca04f19c8effa66"], ["updated_at", Mon, 14 Nov 2011 21:37:18 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "relationships" WHERE ("relationships"."follower_id" = 1 AND "relationships"."followed_id" = 2) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "relationships" ("created_at", "followed_id", "follower_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Mon, 14 Nov 2011 21:37:18 UTC +00:00], ["followed_id", 2], ["follower_id", 1], ["updated_at", Mon, 14 Nov 2011 21:37:18 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = 1 AND "relationships"."followed_id" = 2 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+Binary data inserted for `string` type on column `salt`
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "name", "salt", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Mon, 14 Nov 2011 21:37:18 UTC +00:00], ["email", "user@example.com"], ["encrypted_password", "64155289b3531fe5e21dac061d882bb208599faa4758592a18805e8068c6c954"], ["name", "Example User"], ["salt", "c4e6b697f0c2792d7651a919cf13284cc76b67c691f9b4e4eca04f19c8effa66"], ["updated_at", Mon, 14 Nov 2011 21:37:18 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE LOWER("users"."email") = LOWER('mhartl@example.com') LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+Binary data inserted for `string` type on column `salt`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "name", "salt", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Mon, 14 Nov 2011 21:37:18 UTC +00:00], ["email", "mhartl@example.com"], ["encrypted_password", "64155289b3531fe5e21dac061d882bb208599faa4758592a18805e8068c6c954"], ["name", "Michael Hartl"], ["salt", "c4e6b697f0c2792d7651a919cf13284cc76b67c691f9b4e4eca04f19c8effa66"], ["updated_at", Mon, 14 Nov 2011 21:37:18 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "relationships" WHERE ("relationships"."follower_id" = 1 AND "relationships"."followed_id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "relationships" ("created_at", "followed_id", "follower_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Mon, 14 Nov 2011 21:37:18 UTC +00:00], ["followed_id", 2], ["follower_id", 1], ["updated_at", Mon, 14 Nov 2011 21:37:18 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+Binary data inserted for `string` type on column `salt`
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "name", "salt", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["admin", false], ["created_at", Mon, 14 Nov 2011 21:37:18 UTC +00:00], ["email", "user@example.com"], ["encrypted_password", "64155289b3531fe5e21dac061d882bb208599faa4758592a18805e8068c6c954"], ["name", "Example User"], ["salt", "c4e6b697f0c2792d7651a919cf13284cc76b67c691f9b4e4eca04f19c8effa66"], ["updated_at", Mon, 14 Nov 2011 21:37:18 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "users" WHERE LOWER("users"."email") = LOWER('mhartl@example.com') LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+Binary data inserted for `string` type on column `salt`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "name", "salt", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["admin", false], ["created_at", Mon, 14 Nov 2011 21:37:18 UTC +00:00], ["email", "mhartl@example.com"], ["encrypted_password", "64155289b3531fe5e21dac061d882bb208599faa4758592a18805e8068c6c954"], ["name", "Michael Hartl"], ["salt", "c4e6b697f0c2792d7651a919cf13284cc76b67c691f9b4e4eca04f19c8effa66"], ["updated_at", Mon, 14 Nov 2011 21:37:18 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+Binary data inserted for `string` type on column `salt`
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "name", "salt", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["admin", false], ["created_at", Mon, 14 Nov 2011 21:37:18 UTC +00:00], ["email", "user@example.com"], ["encrypted_password", "64155289b3531fe5e21dac061d882bb208599faa4758592a18805e8068c6c954"], ["name", "Example User"], ["salt", "c4e6b697f0c2792d7651a919cf13284cc76b67c691f9b4e4eca04f19c8effa66"], ["updated_at", Mon, 14 Nov 2011 21:37:18 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT 1 FROM "users" WHERE LOWER("users"."email") = LOWER('mhartl@example.com') LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+Binary data inserted for `string` type on column `salt`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "name", "salt", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["admin", false], ["created_at", Mon, 14 Nov 2011 21:37:19 UTC +00:00], ["email", "mhartl@example.com"], ["encrypted_password", "b401c4251f59b08592ecb6219e909da95f348ae5528a415ebae10a55717f9060"], ["name", "Michael Hartl"], ["salt", "4c1ea48ad09f89b3e214037e2a4b84c894f93ecf5938581e2cc5297c691aed31"], ["updated_at", Mon, 14 Nov 2011 21:37:19 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "relationships" WHERE ("relationships"."follower_id" = 1 AND "relationships"."followed_id" = 2) LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "relationships" ("created_at", "followed_id", "follower_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Mon, 14 Nov 2011 21:37:19 UTC +00:00], ["followed_id", 2], ["follower_id", 1], ["updated_at", Mon, 14 Nov 2011 21:37:19 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = 1 AND "relationships"."followed_id" = 2 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "relationships" WHERE "relationships"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+Binary data inserted for `string` type on column `salt`
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "name", "salt", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Mon, 14 Nov 2011 21:37:19 UTC +00:00], ["email", "user@example.com"], ["encrypted_password", "b401c4251f59b08592ecb6219e909da95f348ae5528a415ebae10a55717f9060"], ["name", "Example User"], ["salt", "4c1ea48ad09f89b3e214037e2a4b84c894f93ecf5938581e2cc5297c691aed31"], ["updated_at", Mon, 14 Nov 2011 21:37:19 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE LOWER("users"."email") = LOWER('mhartl@example.com') LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+Binary data inserted for `string` type on column `salt`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "name", "salt", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Mon, 14 Nov 2011 21:37:19 UTC +00:00], ["email", "mhartl@example.com"], ["encrypted_password", "b401c4251f59b08592ecb6219e909da95f348ae5528a415ebae10a55717f9060"], ["name", "Michael Hartl"], ["salt", "4c1ea48ad09f89b3e214037e2a4b84c894f93ecf5938581e2cc5297c691aed31"], ["updated_at", Mon, 14 Nov 2011 21:37:19 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+Binary data inserted for `string` type on column `salt`
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "name", "salt", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Mon, 14 Nov 2011 21:37:19 UTC +00:00], ["email", "user@example.com"], ["encrypted_password", "b401c4251f59b08592ecb6219e909da95f348ae5528a415ebae10a55717f9060"], ["name", "Example User"], ["salt", "4c1ea48ad09f89b3e214037e2a4b84c894f93ecf5938581e2cc5297c691aed31"], ["updated_at", Mon, 14 Nov 2011 21:37:19 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE LOWER("users"."email") = LOWER('mhartl@example.com') LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+Binary data inserted for `string` type on column `salt`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "name", "salt", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Mon, 14 Nov 2011 21:37:19 UTC +00:00], ["email", "mhartl@example.com"], ["encrypted_password", "b401c4251f59b08592ecb6219e909da95f348ae5528a415ebae10a55717f9060"], ["name", "Michael Hartl"], ["salt", "4c1ea48ad09f89b3e214037e2a4b84c894f93ecf5938581e2cc5297c691aed31"], ["updated_at", Mon, 14 Nov 2011 21:37:19 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+Binary data inserted for `string` type on column `salt`
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "name", "salt", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Mon, 14 Nov 2011 21:37:19 UTC +00:00], ["email", "user@example.com"], ["encrypted_password", "b401c4251f59b08592ecb6219e909da95f348ae5528a415ebae10a55717f9060"], ["name", "Example User"], ["salt", "4c1ea48ad09f89b3e214037e2a4b84c894f93ecf5938581e2cc5297c691aed31"], ["updated_at", Mon, 14 Nov 2011 21:37:19 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE LOWER("users"."email") = LOWER('mhartl@example.com') LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+Binary data inserted for `string` type on column `salt`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "name", "salt", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Mon, 14 Nov 2011 21:37:19 UTC +00:00], ["email", "mhartl@example.com"], ["encrypted_password", "b401c4251f59b08592ecb6219e909da95f348ae5528a415ebae10a55717f9060"], ["name", "Michael Hartl"], ["salt", "4c1ea48ad09f89b3e214037e2a4b84c894f93ecf5938581e2cc5297c691aed31"], ["updated_at", Mon, 14 Nov 2011 21:37:19 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "relationships" WHERE ("relationships"."follower_id" = 1 AND "relationships"."followed_id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "relationships" ("created_at", "followed_id", "follower_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Mon, 14 Nov 2011 21:37:19 UTC +00:00], ["followed_id", 2], ["follower_id", 1], ["updated_at", Mon, 14 Nov 2011 21:37:19 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = 2
